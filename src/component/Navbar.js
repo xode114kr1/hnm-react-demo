@@ -31,12 +31,13 @@ const Navbar = () => {
         />
       </div>
       <div className="menu-contanier">
+        <div className="menu-blink-div"> </div>
         <ul className="menu-list">
           {menuList.map((menu) => (
             <li>{menu}</li>
           ))}
         </ul>
-        <div>
+        <div className="menu-search-div">
           <FontAwesomeIcon icon={faSearch} />
           <input type="text" />
         </div>

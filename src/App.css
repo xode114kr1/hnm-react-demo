@@ -14,15 +14,31 @@
 
 .menu-contanier{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
+.menu-contanier div{
+  flex-grow: 1;
+}
+
+.menu-blink-div{
+  width: 193px;
+}
+
 .menu-list{
+  justify-content: center;
   display: flex;
+  flex-grow: 1;
   list-style-type: none;
 }
 
 .menu-list li{
   padding: 10px;
+}
+
+.menu-search-div{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
 }

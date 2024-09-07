@@ -1,16 +1,13 @@
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard = ({ item }) => {
   return (
-    <div>
-      <img
-        width="300px"
-        src="https://noona-hnm.netlify.app/pattern-jacket.jpeg"
-      />
-      <div>Count choices</div>
-      <div>title</div>
-      <div>price</div>
-      <div>new</div>
+    <div className="productCard">
+      <img src={item?.img} />
+      <div>{item && item.choice ? "Conscious choice" : ""}</div>
+      <div>{item?.title}</div>
+      <div>{item?.price}</div>
+      <div>{item && item.new ? "New" : ""}</div>
     </div>
   );
 };

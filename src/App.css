@@ -42,3 +42,18 @@
   justify-content: flex-end;
   padding-right: 30px;
 }
+
+.productCard{
+  width: 300px;
+  overflow: hidden;
+}
+
+.productCard:hover{
+  transform:scale(1.1);
+  cursor: pointer;
+}
+
+.productCard img{
+  max-width: 100%;
+  object-fit: contain;
+}

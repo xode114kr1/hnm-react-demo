@@ -57,3 +57,12 @@
   max-width: 100%;
   object-fit: contain;
 }
+
+.login-button:hover{
+  cursor: pointer;
+}
+
+.login-contanier{
+  width: 1000px;
+  margin: 0 auto;
+}

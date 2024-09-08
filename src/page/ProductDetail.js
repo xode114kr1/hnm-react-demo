@@ -25,7 +25,7 @@ const ProductDetail = () => {
           </Col>
           <Col className="product-detail-word">
             <div>{product?.title}</div>
-            <div>{product?.price}</div>
+            <div>₩ {product?.price}</div>
             <div>{product && product.choice ? "Conscious choice" : " "}</div>
             <Form.Select
               aria-label="Default select example"

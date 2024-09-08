@@ -39,6 +39,7 @@
 
 .menu-search-div{
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   padding-right: 30px;
 }
@@ -65,4 +66,24 @@
 .login-contanier{
   width: 1000px;
   margin: 0 auto;
+}
+
+.product-detail-img{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-detail-select-size{
+  width: 170px;
+  font-size: 15px;
+}
+
+.product-detail-word{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-detail-add-button{
+  width: 300px;
 }

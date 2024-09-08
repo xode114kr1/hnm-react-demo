@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faL, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     "여성",
     "Divided",
@@ -15,20 +15,31 @@ const Navbar = () => {
     "Sale",
     "지속가능성",
   ];
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
   const goToLogin = () => {
-    nevigate("/login");
+    if (authenticate) {
+      setAuthenticate(false);
+    } else {
+      navigate("/login");
+    }
   };
 
   const goToProductAll = () => {
-    nevigate("/");
+    navigate("/");
+  };
+
+  const searchProduct = (e) => {
+    if (e.key === "Enter") {
+      let keyword = e.target.value;
+      navigate(`/?q=${keyword}`);
+    }
   };
   return (
     <div>
       <div>
         <div className="login-button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
+          <div>{authenticate ? "로그아웃" : "로그인"}</div>
         </div>
       </div>
 
@@ -48,7 +59,7 @@ const Navbar = () => {
         </ul>
         <div className="menu-search-div">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" />
+          <input type="text" onKeyDown={(e) => searchProduct(e)} />
         </div>
       </div>
     </div>
